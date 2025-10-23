@@ -27,7 +27,7 @@ const ServicesSection = () => {
       id: 1,
       title: "IT Consulting & Software Development",
       description: "Transform your business with cutting-edge technology solutions. Our expert team delivers custom software development, system integration, and digital transformation services.",
-      icon: "💻",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center",
       features: ["Custom Software", "System Integration", "Cloud Migration", "Technical Consulting"],
       color: "from-blue-500 to-blue-600"
     },
@@ -35,7 +35,7 @@ const ServicesSection = () => {
       id: 2,
       title: "Tech Strategy Consulting", 
       description: "Shape your digital future with strategic technology planning. We help businesses navigate complex tech landscapes and implement solutions that drive real growth.",
-      icon: "📊",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
       features: ["Digital Strategy", "Technology Roadmap", "Process Optimization", "Change Management"],
       color: "from-green-500 to-green-600"
     },
@@ -43,7 +43,7 @@ const ServicesSection = () => {
       id: 3,
       title: "AI & Automation Solutions",
       description: "Leverage artificial intelligence to automate processes and boost efficiency. Our AI solutions help businesses stay competitive in the digital age.",
-      icon: "🚀",
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop&crop=center",
       features: ["AI Implementation", "Process Automation", "Machine Learning", "Smart Analytics"],
       color: "from-purple-500 to-purple-600"
     },
@@ -51,7 +51,7 @@ const ServicesSection = () => {
       id: 4,
       title: "Data Analytics & Insights",
       description: "Transform raw data into actionable insights. Our data experts help you make informed decisions and unlock the hidden potential in your business data.",
-      icon: "📈",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center",
       features: ["Data Analytics", "Business Intelligence", "Predictive Modeling", "Data Visualization"],
       color: "from-orange-500 to-orange-600"
     }
@@ -66,7 +66,7 @@ const ServicesSection = () => {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="text-center mb-16 sm:mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-PrimaryColor bg-opacity-10 rounded-full text-PrimaryColor text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-PrimaryColor rounded-full mr-2"></span>
             Our Services
@@ -85,18 +85,19 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={service.id} 
-              className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${index * 200}ms` }}
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
             >
-              {/* Card Header */}
-              <div className={`relative h-32 bg-gradient-to-br ${service.color} p-6 flex items-center`}>
-                <div className="absolute inset-0 bg-black bg-opacity-10"></div>
-                <div className="relative z-10 flex items-center">
-                  <div className="text-4xl mr-4">{service.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
-                    <div className="w-12 h-1 bg-white bg-opacity-50 rounded"></div>
-                  </div>
+              {/* Card Header with Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/40"></div>
+                <div className="absolute bottom-4 left-6 right-6">
+                  <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
+                  <div className="w-12 h-1 bg-white bg-opacity-50 rounded"></div>
                 </div>
                 <div className="absolute top-4 right-4 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-white group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

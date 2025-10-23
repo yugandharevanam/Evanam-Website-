@@ -11,13 +11,24 @@ const PainPointsSection = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&crop=center" 
+          alt="Business Solutions Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/95"></div>
+      </div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Side - Pain Points */}
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 sm:mb-8">
               The Pain
+              <span className="block text-red-500">Points</span>
             </h2>
             <div className="space-y-3 sm:space-y-4">
               {painPoints.map((point, index) => (
@@ -38,10 +49,17 @@ const PainPointsSection = () => {
               Evanam can help.
             </p>
             
-            {/* Toy Pyramid Image Placeholder */}
-            <div className="bg-gray-200 rounded-lg p-6 sm:p-8 mb-6 sm:mb-8">
-              <div className="text-4xl sm:text-6xl mb-3 sm:mb-4">🧸</div>
-              <p className="text-gray-500 text-sm sm:text-base">Wooden Toy Pyramid</p>
+            {/* Solution Image */}
+            <div className="relative rounded-lg overflow-hidden mb-6 sm:mb-8 shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center" 
+                alt="Business Solutions" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-lg">Transform Your Business Today</p>
+              </div>
             </div>
             
             <Link 

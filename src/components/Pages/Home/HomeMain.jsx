@@ -7,7 +7,7 @@ import DigitalCoreSection from './DigitalCoreSection'
 import TestimonialsSection from './TestimonialsSection'
 import CTASection from './CTASection'
 
-const Home1 = () => {
+const HomeMain = () => {
   return (
     <>
       <HeroSection />
@@ -21,4 +21,4 @@ const Home1 = () => {
   )
 }
 
-export default Home1
+export default HomeMain

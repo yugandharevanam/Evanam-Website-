@@ -1,8 +1,7 @@
 /* (optional) Keep charset first if you use it */
 /* @charset "UTF-8"; */
 
-/* 1) Google Fonts import MUST come before everything (except @charset / empty @layer) */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+/* 1) Google Fonts are now loaded via HTML link tag for better performance */
 
 /* 2) Tailwind layers */
 @tailwind base;

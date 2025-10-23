@@ -2,8 +2,18 @@ import React from 'react';
 
 const AIGrowthSection = () => {
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-r from-PrimaryColor to-DarkGray text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 relative overflow-hidden text-white">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&h=1080&fit=crop&crop=center" 
+          alt="AI Technology Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80"></div>
+      </div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Side - Content */}
           <div>
@@ -37,11 +47,19 @@ const AIGrowthSection = () => {
             </div>
           </div>
           
-          {/* Right Side - Image Placeholder */}
+          {/* Right Side - AI Image */}
           <div className="text-center">
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6 sm:p-8">
-              <div className="text-4xl sm:text-6xl mb-3 sm:mb-4">📚</div>
-              <p className="text-gray-200 text-sm sm:text-base">Digital Reading</p>
+            <div className="relative rounded-lg overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop&crop=center" 
+                alt="AI Technology" 
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white font-semibold text-lg">AI-Powered Solutions</p>
+                <p className="text-gray-200 text-sm">Transforming businesses with intelligent automation</p>
+              </div>
             </div>
           </div>
         </div>

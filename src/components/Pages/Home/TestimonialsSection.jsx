@@ -61,7 +61,17 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials-section" className="py-20 sm:py-32 bg-gradient-to-b from-white to-SecondaryColor relative overflow-hidden">
+    <section id="testimonials-section" className="py-20 sm:py-32 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&crop=center" 
+          alt="Client Testimonials Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/95"></div>
+      </div>
+      
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-64 h-64 bg-PrimaryColor bg-opacity-5 rounded-full blur-3xl"></div>
@@ -70,7 +80,7 @@ const TestimonialsSection = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="text-center mb-16 sm:mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-OrangeAccent bg-opacity-10 rounded-full text-OrangeAccent text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-OrangeAccent rounded-full mr-2"></span>
             Client Success Stories
@@ -85,7 +95,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials Carousel */}
-        <div className={`relative transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="relative">
           <div className="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-16 relative overflow-hidden">
             {/* Quote Icon */}
             <div className="absolute top-8 left-8 text-PrimaryColor text-6xl opacity-10">

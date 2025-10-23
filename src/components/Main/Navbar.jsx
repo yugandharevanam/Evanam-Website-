@@ -12,10 +12,20 @@ const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
+    
+    // Hide navbar when scrolling down, show when scrolling up
+    if (position > lastScrollY && position > 100) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+    setLastScrollY(position);
   };
 
   const [openStatus, setOpenStatus] = useState("home");
@@ -45,12 +55,13 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [lastScrollY]);
 
-  const navbarBackground = scrollPosition > window.innerHeight * 0.25 ? 'bg-black' : '';
+  const navbarBackground = scrollPosition > window.innerHeight * 0.25 ? 'bg-black/90 backdrop-blur-md' : 'bg-transparent';
+  const navbarTransform = isVisible ? 'translate-y-0' : '-translate-y-full';
 
   return (
-    <nav className={`flex items-center justify-between px-4 py-3 fixed z-50 top-0 left-0 right-0 text-white transition duration-300 ${navbarBackground}`}>
+    <nav className={`flex items-center justify-between px-4 py-3 fixed z-50 top-0 left-0 right-0 text-white transition-all duration-300 ease-in-out ${navbarBackground} ${navbarTransform}`}>
       {/* Logo */}
       <div className="flex items-center">
         <Link to="/" className="text-2xl font-bold" onClick={scrollToTop}>
