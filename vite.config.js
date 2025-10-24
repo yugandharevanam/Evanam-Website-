@@ -8,6 +8,10 @@ export default defineConfig({
     port: 5173,
     host: true,
     open: true,
+    strictPort: true,
+    hmr: {
+      overlay: false
+    },
     watch: {
       ignored: [
         '**/node_modules/**',
@@ -24,5 +28,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom']
   }
 })
